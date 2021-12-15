@@ -617,11 +617,12 @@ header .circle {
   height: 330px;
   width: 100%;
   cursor: pointer;
+  background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(120, 76, 251, 0.55) 100%);
 }
 
 .gallery-image img {
   position: absolute;
-  height: 115%;
+  height: 10%;
   width: initial;
   top: 50%;
   left: 50%;
@@ -675,20 +676,45 @@ header .circle {
 }
 
 .img-overlay h3 {
+  position: absolute;
   font-weight: 600;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-size: 1.5rem;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 50%);
 }
 
 .img-overlay h5 {
   font-size: 1.15rem;
   font-weight: 300;
+  float: right;
 }
-
-.gallery-image:hover .img-overlay {
+.img-overlay h5 a{
+  text-decoration: none;
+  color: white;
+}
+.img-overlay h5 a:hover{
+  color: skyblue;
+}
+.gallery-image:hover{
+  opacity: 1;
+  animation: 0.5s fill forwards;
+}
+@keyframes fill{
+  0%{
+    background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(120, 76, 251, 0.55) 100%);
+  }
+  50%{
+    background: linear-gradient(180deg, rgba(255,255,255,0.8) 10%, rgba(120, 76, 251, 0.55) 90%);
+  }
+  100%{
+    background: linear-gradient(180deg, rgba(255,255,255,0.8) 20%, rgba(120, 76, 251, 0.55) 80%);
+  }
+}
+.gallery-image:hover .img-overlay{
   opacity: 1;
 }
-
 .gallery-image:hover img {
   transform: translate(-50%, -50%) scale(1.1);
 }
